@@ -1,4 +1,5 @@
-root = true
+# I seriously have no idea what this file is unless the filename makes some sense
+oot = true
 
 [*]
 end_of_line = lf

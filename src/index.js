@@ -1,4 +1,4 @@
-import "dotenv/config";
+import "dotenv/config"; // This thing supports the implimentation of .env files.
 import cors from "cors";
 import express from "express";
 
@@ -11,7 +11,7 @@ const app = express();
 
 // Third-Party Middleware
 
-app.use(cors());
+app.use(cors()); // this prevents an exception error sometimes coused in express so anyways.
 
 // Built-In Middleware
 
@@ -44,15 +44,18 @@ app.use("/messages", routes.message);
 
 // * Start * //
 
-const eraseDatabaseOnSync = true;
+const eraseDatabaseOnSync = false; // to reset the database on each server connection reset
 
 connectDb().then(async () => {
+  // function to reset the database on sync
   if (eraseDatabaseOnSync) {
     await Promise.all([
       models.User.deleteMany({}),
       models.Message.deleteMany({}),
     ]);
+    console.log("mongoose database cleared");
     createUsersWithMessages();
+    console.log("sample data generated");
   }
 
   app.listen(process.env.PORT, () =>
@@ -62,25 +65,25 @@ connectDb().then(async () => {
 
 const createUsersWithMessages = async () => {
   const user1 = new models.User({
-    username: "rwieruch",
+    username: "thatguy",
   });
 
   const user2 = new models.User({
-    username: "ddavids",
+    username: "mstrange",
   });
 
   const message1 = new models.Message({
-    text: "Published the Road to learn React",
+    text: "would you rather be in hell?",
     user: user1.id,
   });
 
   const message2 = new models.Message({
-    text: "Happy to release ...",
+    text: "playing with men all the time... I mean the stack. the mongo express node things",
     user: user2.id,
   });
 
   const message3 = new models.Message({
-    text: "Published a complete ...",
+    text: "release the dragon",
     user: user2.id,
   });
 

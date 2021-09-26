@@ -1,3 +1,5 @@
+// this is like the config file for the babel compiler
+// here we have instructed babel to use the following prest
 {
   "presets": ["@babel/preset-env"]
 }

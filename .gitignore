@@ -6,6 +6,7 @@
 
 # Swap the comments on the following lines if you don't wish to use zero-installs
 # Documentation here: https://yarnpkg.com/features/zero-installs
+# I didn't use it cause it didn't get pushed to github with this on. hell no.
 # !/.yarn/cache
 /.pnp.*
 

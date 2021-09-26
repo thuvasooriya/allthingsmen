@@ -1,7 +1,7 @@
 // import { v4 as uuidv4 } from "uuid"; // helper library to generate unique identifiers
-import { Router } from "express";
+import { Router } from "express"; // that helper component to recreate express actions
 
-const router = Router();
+const router = Router(); // I mean should we do this? why don't we use jusr Router instead
 
 router.get("/", async (req, res) => {
   const messages = await req.context.models.Message.find();

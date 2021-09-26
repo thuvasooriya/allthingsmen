@@ -1,4 +1,5 @@
+// we don't need this for now
 // local database
-module.exports = {
-  url: "mongodb://localhost/jotscluster",
-};
+// module.exports = {
+//   url: "mongodb://localhost/jotscluster",
+// };
